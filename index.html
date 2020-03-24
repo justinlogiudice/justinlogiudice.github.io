@@ -28,9 +28,17 @@
         resize: both;
       }
       
-      .grid-container {
+      .grid-container-2col {
         display: inline-grid;
         grid-template-columns: auto auto;
+        padding: 10px;
+        max-width: 1920px;
+        margin: auto;
+      }
+      
+      .grid-container-3col {
+        display: inline-grid;
+        grid-template-columns: auto auto auto;
         padding: 10px;
         max-width: 1920px;
         margin: auto;
@@ -53,12 +61,21 @@
     <p>From the Roman goddess of the Earth: Terra, the <b>Internet of Terra</b> is the <b>Internet of the Earth</b></p>
     <p>This project creates a link between our <b>Earth</b> and the <b>Internet</b>! 🌎↔️🌐</p>
     
-    <div class="grid-container">
+    <div class="grid-container-2col">
 
       <div class="grid-item">
         <h1 style="color:#0DCF01;">💧 Soil Moisture</h1>
         <iframe width="450" height="260" style="border: 0px solid #cccccc;" src="https://thingspeak.com/channels/1008321/charts/1?bgcolor=%23000000&color=%230DCF01&dynamic=true&results=4320&average=60&title=""&type=line"></iframe>
       </div>
+      
+      <div class="grid-item">
+        <h1>Current Level</h1>
+        <iframe width="450" height="260" style="border: 0px solid #cccccc;" src="https://thingspeak.com/channels/1008321/widgets/164705"></iframe>
+      </div>
+    
+    </div>
+    
+    <div class="grid-container-3col">
       
       <div class="grid-item">
         <h1 style="color:#d62020;">🌡️ Temperature</h1>

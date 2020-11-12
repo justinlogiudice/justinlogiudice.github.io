@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html style="width=90%;">
+  
+  <title>IoTerra</title>
+  
+  <head>
+    
+    <link rel="shortcut icon" type="image/x-icon" href="IoTerra_Logo.png">
+    
+    <style>
+      
+      #wrap { 
+        width: 900px; 
+        margin: 0 auto; 
+      }
+      
+      *{
+        font-family:Tahoma, Geneva, sans-serif;
+        text-align:center;
+        max-width: 1920px;
+        margin: auto;
+        <!-- background-color:black; -->
+        <!-- color:white; -->
+      }
+      
+      body{
+        padding: 10px;
+      }
+      
+      iframe {
+        height: 260px;
+        width: 450px;
+        resize: both;
+      }
+      
+      .grid-container-2col {
+        display: inline-grid;
+        grid-template-columns: auto auto;
+        padding: 10px;
+        max-width: 1920px;
+        margin: auto;
+      }
+      
+      .grid-container-3col {
+        display: inline-grid;
+        grid-template-columns: auto auto auto;
+        padding: 10px;
+        max-width: 1920px;
+        margin: auto;
+      }
+      
+      .grid-item {
+        padding: 20px;
+        text-align: center;
+      }
+    </style>
+    
+  </head>
+
+  <div id="wrap">
+    
+  <body>
+    <img src="IoTerra_Logo.png" alt="IoTerra Logo" width="300">
+    <br>
+    
+    <p>IoTerra is an Internet of Things project developed by:</p>
+    <a style="font-size:40px" href="https://www.linkedin.com/in/justin-lo-giudice"><b><u>Justin Lo Giudice 👨‍💻</b></u></a>
+    <p>A fourth-year <a href="https://www.eng.mcmaster.ca/ece/programs/degree-options/bengmanagement/computer-engineering-and-management">Computer Engineering and Management</a> student at McMaster University in Hamilton, ON, Canada 🍁</p>
+    <br>
+    <p>From the Roman goddess of the Earth: Terra, the <b>Internet of Terra</b> is the <b>Internet of the Earth</b>,</p>
+    <p>creating a link between our physical <b>Earth</b> and the powerful resources of the <b>Internet</b>! 🌎↔️🌐</p>
+    <br>
+    <p>The IoT system measures the <b>soil moisture</b>, <b>room temperature </b>and <b>relative humidity</b>, along with the <b>light</b> conditions of a <a href="https://en.wikipedia.org/wiki/Rhapis_excelsa">Lady Palm</a> plant. Every minute, the system measures these sensors and sends JSON data over WiFi to the <a href="https://thingspeak.com/">ThingSpeak</a> cloud platform. This data is then visualized in interactive plots, which are embedded into this page.</p>
+    <br>
+    <p>Along with this, weather data of the temperature, humidity and cloud coverage of the local area are accessed via the JSON output of the <a href="https://openweathermap.org/city/5969785">OpenWeatherMap</a> API.</p>
+    <br>
+    <p>When presented alongside eachother, one can visualize the effects that the external weather conditions can have on an indoor plant in a seemingly controlled environment.</p>
+    <br>
+    <p> This project is now <b>archived</b>. It still pulls updated weather data, but the circuit has been dissasembled, and thus no longer sends plant data. Here is an image of its state during operation:</p>
+    <br>
+    <img src="IoTerra_Cropped.png" alt="IoTerra Platform">
+    
+    
+    <div class="grid-container-2col">
+
+      <div class="grid-item">
+        <h1 style="color:#00a651;">💧 Soil Moisture</h1>
+        <iframe width="450" height="260" style="border: 0px solid #cccccc;" src="https://thingspeak.com/channels/1008321/charts/1?bgcolor=%23FFFFFF&color=%2300a651&days=1&dynamic=true&median=30&title=""&type=line"></iframe>
+      </div>
+      
+      <div class="grid-item">
+        <h1>Current Level</h1>
+        <iframe width="450" height="260" style="border: 0px solid #cccccc;" src="https://thingspeak.com/channels/1008321/widgets/164707"></iframe>
+      </div>
+    
+    </div>
+    
+    <div class="grid-container-2col">
+      
+      <div class="grid-item">
+        <h1 style="color:#d62020;">🌡️ Room Temperature (°C)</h1>
+        <iframe width="450" height="260" style="border: 0px solid #cccccc;" src="https://thingspeak.com/channels/1008321/charts/2?bgcolor=%23FFFFFF&color=%23E94001+&days=1&dynamic=true&median=30&title=""&type=line"></iframe>
+      </div>
+      
+      <div class="grid-item">
+        <h1 style="color:#d62020;">Outdoor Temperature (°C)</h1>
+        <iframe width="450" height="260" style="border: 0px solid #cccccc;" src="https://thingspeak.com/channels/1008321/charts/5?bgcolor=%23ffffff&color=%23d62020&&days=1&dynamic=true&median=30&title=""&type=line"></iframe>
+      </div>
+      
+      <div class="grid-item">
+        <h1 style="color:#019ACF;">💨 Room Air Humidity (%)</h1>
+        <iframe width="450" height="260" style="border: 0px solid #cccccc;" src="https://thingspeak.com/channels/1008321/charts/3?bgcolor=%23FFFFFF&color=%23019ACF&days=1&dynamic=true&min=0&median=30&max=100&title=""&type=line&yaxismax=100&yaxismin=0"></iframe>
+      </div>
+        
+      <div class="grid-item">
+        <h1 style="color:#019ACF;">Outdoor Humidity (%)</h1>
+        <iframe width="450" height="260" style="border: 0px solid #cccccc;" src="https://thingspeak.com/channels/1008321/charts/6?bgcolor=%23ffffff&color=%23019ACF&days=1&dynamic=true&min=0&median=30&max=100&title=""&type=line&yaxismax=100&yaxismin=0"></iframe>
+      </div>
+      
+      <div class="grid-item">
+        <h1 style="color:#F0DE00;">☀️ Room Light (%)</h1>
+        <iframe width="450" height="260" style="border: 0px solid #cccccc;" src="https://thingspeak.com/channels/1008321/charts/4?bgcolor=%23ffffff&color=%23F0DE00&days=1&dynamic=true&median=30&title=""&type=line"></iframe>
+      </div>
+        
+      <div class="grid-item">
+        <h1 style="color:#F0DE00;">☁️ Cloud Coverage (%)</h1>
+        <iframe width="450" height="260" style="border: 0px solid #cccccc;" src="https://thingspeak.com/channels/1008321/charts/7?bgcolor=%23ffffff&color=%23F0DE00&days=1&dynamic=true&min=0&median=30&max=100&title=""&type=line&yaxismax=100&yaxismin=0"></iframe>
+      </div>
+    
+    </div>
+     <!--
+        <h1>Last Week's Data</h1>
+        <iframe width="450" height="260" style="border: 0px solid #cccccc;" src="https://thingspeak.com/apps/matlab_visualizations/328375"></iframe>
+    -->
+  </div>
+  
+  </body>
+
+</html>
